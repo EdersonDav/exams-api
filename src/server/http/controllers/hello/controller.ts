@@ -3,10 +3,10 @@ import { GetHello } from '../../../../core/use-cases/hello';
 
 @Controller()
 export class HelloController {
-  constructor(private readonly getHelloService: GetHello) {}
+    constructor(private readonly getHelloService: GetHello) {}
 
-  @Get()
-  getHello(): string {
-    return this.getHelloService.execute();
-  }
+    @Get()
+    getHello(): string {
+        return this.getHelloService.execute();
+    }
 }

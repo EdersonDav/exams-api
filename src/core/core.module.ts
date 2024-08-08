@@ -4,7 +4,7 @@ import { UseCasesModule } from './use-cases';
 const modules = [UseCasesModule];
 
 @Module({
-  imports: modules,
-  exports: modules,
+    imports: modules,
+    exports: modules,
 })
 export class CoreModule {}
