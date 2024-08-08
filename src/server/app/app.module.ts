@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ControllerModule } from '../http/controller.module';
-import { DataBaseModule } from '../../database';
-import { CoreModule } from '../../core';
+import { DataBaseModule } from '@database/index';
+import { CoreModule } from '@core/index';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({

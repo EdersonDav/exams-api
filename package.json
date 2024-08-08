@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "type": "commonjs",
   "engines": {
     "node": "^20"
   },
@@ -20,7 +21,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm": "APP=migration ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm -d ./src/database/datasource.ts",
+    "migration:create": "read name && npx typeorm-ts-node-commonjs migration:create ./src/database/migrations/$name",
+    "migration:run": "APP=migration yarn typeorm migration:run",
+    "migration:revert": "yarn typeorm migration:revert"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
